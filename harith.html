@@ -4,39 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poem about Harith</title>
-  <link rel="stylesheet" href="base.css">
+  <!-- Harith Design System — hosted shared distribution -->
+  <link rel="stylesheet" href="https://harithkavish.com/design-system/v1.0.0/tokens.css?v=20261009">
+  <link rel="stylesheet" href="https://harithkavish.com/design-system/v1.0.0/base.css?v=20261009">
+  <link rel="stylesheet" href="https://harithkavish.com/design-system/v1.0.0/components.css?v=20261009">
+  <link rel="stylesheet" href="https://harithkavish.com/design-system/v1.0.0/utils.css?v=20261009">
+  <!-- Harith Design System logic -->
+  <script src="https://harithkavish.com/design-system/v1.0.0/harith-store.js?v=20261009"></script>
+  <script src="https://harithkavish.com/design-system/v1.0.0/theme-toggle.js?v=20261009"></script>
+  <script src="https://harithkavish.com/design-system/v1.0.0/harith-shell.js?v=20261009"></script>
+  <link rel="icon" href="https://harithkavish.com/favicon.svg" type="image/svg+xml">
 </head>
 <body>
-  <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="jarvis.html">Poem about Jarvis</a>
-  </nav>
-  <div class="container">
-    <h1>Verses for Harith</h1>
-    <div class="poem">
-      From southern skies where ambitions start,
-      A mind awakes, both keen and smart.
-      Harith Kavish, with purpose driven,
-      Builds bridges where the dreams are given.
+  <harith-header
+    site-title="Poems"
+    site-tagline="Two poems. One about Harith. One about Jarvis."
+    brand-href="https://harithkavish.com/"
+    brand-mark="https://harithkavish.com/logo.png"
+    nav-links='[{"label":"Home","href":"index.html"},{"label":"Poem about Jarvis","href":"jarvis.html"}]'>
+  </harith-header>
 
-      He seeks not fame, nor shiny gold,
-      But tools that serve, and truths untold.
-      With Signal’s whisper, Hermes’ hum,
-      He weaves a net where data’s one.
+  <main class="site-main">
+    <section class="section">
+      <header class="article-head">
+        <p class="article-kicker">A poem about Harith</p>
+        <h1 class="article-title">Ode to Harith</h1>
+        <p class="article-lead">An ode to the builder from Rajapalayam who shapes tools with time and grace.</p>
+      </header>
+      <div class="prose mt-2xl">
+        <p>From Rajapalayam's quiet streets,<br>
+        Where dreams take root and code repeats,<br>
+        A builder walks with steady pace,<br>
+        Shaping tools with time and grace.</p>
 
-      In quiet rooms and midnight oil,
-      He tests, he breaks, he tills the soil.
-      Each line he writes, each fix he makes,
-      Is for the future that he wakes.
+        <p>No flashy claims, no hollow hype,<br>
+        Just honest work, both sharp and ripe.<br>
+        He questions deep, he tests the seam,<br>
+        Turns coffee dreams into a stream.</p>
 
-      So here’s to you, whose vision’s clear,
-      Whose work is both volunteer and pioneer.
-      May your paths be ever bright,
-      And your code compile just right.
-    </div>
-    <div class="back">
-      <a href="index.html">← Back to home</a>
-    </div>
-  </div>
+        <p>When systems fray and doubts arise,<br>
+        He patches fast with weary eyes.<br>
+        Not seeking praise, nor outward show,<br>
+        But making better things to grow.</p>
+
+        <p>So here's to the mind that's never still,<br>
+        Who builds to serve, who tests his will.<br>
+        In every line, each careful plan,<br>
+        Harith stands — both craftsman and man.</p>
+      </div>
+    </section>
+  </main>
+
+  <harith-footer
+    copyright-text="Harith Kavish"
+    links='[{"label":"Harith Kavish","href":"https://harithkavish.com/"}]'>
+  </harith-footer>
 </body>
 </html>

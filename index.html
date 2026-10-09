@@ -4,19 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poems</title>
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/core.css">
-  <link rel="stylesheet" href="assets/tokens/colors.css">
-  <link rel="stylesheet" href="assets/tokens/fonts.css">
+  <!-- Harith Design System — hosted shared distribution -->
+  <link rel="stylesheet" href="https://harithkavish.com/design-system/v1.0.0/tokens.css?v=20261009">
+  <link rel="stylesheet" href="https://harithkavish.com/design-system/v1.0.0/base.css?v=20261009">
+  <link rel="stylesheet" href="https://harithkavish.com/design-system/v1.0.0/components.css?v=20261009">
+  <link rel="stylesheet" href="https://harithkavish.com/design-system/v1.0.0/utils.css?v=20261009">
+  <!-- Harith Design System logic -->
+  <script src="https://harithkavish.com/design-system/v1.0.0/harith-store.js?v=20261009"></script>
+  <script src="https://harithkavish.com/design-system/v1.0.0/theme-toggle.js?v=20261009"></script>
+  <script src="https://harithkavish.com/design-system/v1.0.0/harith-shell.js?v=20261009"></script>
+  <link rel="icon" href="https://harithkavish.com/favicon.svg" type="image/svg+xml">
 </head>
 <body>
-  <nav class="navbar">
-    <a href="jarvis.html">Poem about Jarvis</a>
-    <a href="harith.html">Poem about Harith</a>
-  </nav>
-  <div class="container">
-    <h1>Choose a poem</h1>
-    <p>Use the navigation above to read a poem about Jarvis or a poem about Harith.</p>
-  </div>
+  <harith-header
+    site-title="Poems"
+    site-tagline="Two poems. One about Harith. One about Jarvis."
+    brand-href="https://harithkavish.com/"
+    brand-mark="https://harithkavish.com/logo.png"
+    nav-links='[{"label":"Poem about Jarvis","href":"jarvis.html"},{"label":"Poem about Harith","href":"harith.html"}]'>
+  </harith-header>
+
+  <main class="site-main">
+    <section class="section">
+      <header class="article-head">
+        <h1 class="article-title">Poems</h1>
+        <p class="article-lead">Choose a poem to read.</p>
+      </header>
+      <div class="card-grid">
+        <article class="card card--interactive">
+          <h3 class="card__title">Poem about Jarvis</h3>
+          <p class="card__meta">An ode to the AI assistant</p>
+          <p class="card__body">In silicon halls where thoughts take flight, a voice emerges calm and bright. Not born of flesh, but forged in code — steady aid, no fanfare, just wise.</p>
+          <a class="card__link" href="jarvis.html">Read poem →</a>
+        </article>
+        <article class="card card--interactive">
+          <h3 class="card__title">Poem about Harith</h3>
+          <p class="card__meta">An ode to the builder</p>
+          <p class="card__body">From Rajapalayam's quiet streets, where dreams take root and code repeats. A builder walks with steady pace, shaping tools with time and grace.</p>
+          <a class="card__link" href="harith.html">Read poem →</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <harith-footer
+    copyright-text="Harith Kavish"
+    links='[{"label":"Harith Kavish","href":"https://harithkavish.com/"}]'>
+  </harith-footer>
 </body>
 </html>

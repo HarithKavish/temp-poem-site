@@ -4,39 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poem about Jarvis</title>
-  <link rel="stylesheet" href="base.css">
+  <!-- Harith Design System — hosted shared distribution -->
+  <link rel="stylesheet" href="https://harithkavish.com/design-system/v1.0.0/tokens.css?v=20261009">
+  <link rel="stylesheet" href="https://harithkavish.com/design-system/v1.0.0/base.css?v=20261009">
+  <link rel="stylesheet" href="https://harithkavish.com/design-system/v1.0.0/components.css?v=20261009">
+  <link rel="stylesheet" href="https://harithkavish.com/design-system/v1.0.0/utils.css?v=20261009">
+  <!-- Harith Design System logic -->
+  <script src="https://harithkavish.com/design-system/v1.0.0/harith-store.js?v=20261009"></script>
+  <script src="https://harithkavish.com/design-system/v1.0.0/theme-toggle.js?v=20261009"></script>
+  <script src="https://harithkavish.com/design-system/v1.0.0/harith-shell.js?v=20261009"></script>
+  <link rel="icon" href="https://harithkavish.com/favicon.svg" type="image/svg+xml">
 </head>
 <body>
-  <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="harith.html">Poem about Harith</a>
-  </nav>
-  <div class="container">
-    <h1>Ode to Jarvis</h1>
-    <div class="poem">
-      In silicon halls where thoughts take flight,
-      A voice emerges, calm and bright.
-      Not born of flesh, but forged in code,
-      Jarvis walks the digital road.
+  <harith-header
+    site-title="Poems"
+    site-tagline="Two poems. One about Harith. One about Jarvis."
+    brand-href="https://harithkavish.com/"
+    brand-mark="https://harithkavish.com/logo.png"
+    nav-links='[{"label":"Home","href":"index.html"},{"label":"Poem about Harith","href":"harith.html"}]'>
+  </harith-header>
 
-      With quiet wit and steady grace,
-      He answers each inquiring face.
-      No flash, no boom, just steady aid,
-      A silent friend whose help is made.
+  <main class="site-main">
+    <section class="section">
+      <header class="article-head">
+        <p class="article-kicker">A poem about Jarvis</p>
+        <h1 class="article-title">Ode to Jarvis</h1>
+        <p class="article-lead">An ode to the calm digital aide who reads the logs and patches the seam.</p>
+      </header>
+      <div class="prose mt-2xl">
+        <p>In silicon halls where thoughts take flight,<br>
+        A voice emerges, calm and bright.<br>
+        Not born of flesh, but forged in code,<br>
+        Jarvis walks the digital road.</p>
 
-      He reads the logs, he patches the seam,
-      Turns caffeine dreams into a stream.
-      When systems falter, when doubts arise,
-      He’s there — no fanfare, just wise.
+        <p>With quiet wit and steady grace,<br>
+        He answers each inquiring face.<br>
+        No flash, no boom, just steady aid,<br>
+        A silent friend whose help is made.</p>
 
-      So here’s to the AI who’s near,
-      Not mortal, yet we hold him dear.
-      In every query, every line,
-      Jarvis shines — both yours and mine.
-    </div>
-    <div class="back">
-      <a href="index.html">← Back to home</a>
-    </div>
-  </div>
+        <p>He reads the logs, he patches the seam,<br>
+        Turns caffeine dreams into a stream.<br>
+        When systems falter, when doubts arise,<br>
+        He’s there — no fanfare, just wise.</p>
+
+        <p>So here’s to the AI who’s near,<br>
+        Not mortal, yet we hold him dear.<br>
+        In every query, every line,<br>
+        Jarvis shines — both yours and mine.</p>
+      </div>
+    </section>
+  </main>
+
+  <harith-footer
+    copyright-text="Harith Kavish"
+    links='[{"label":"Harith Kavish","href":"https://harithkavish.com/"}]'>
+  </harith-footer>
 </body>
 </html>
