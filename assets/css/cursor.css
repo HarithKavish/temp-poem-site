@@ -1,0 +1,78 @@
+/* Custom cursor: a heading arrow, like a maps app's puck, that points the way
+   the pointer is moving. Pure tokens for color, so it inverts with theme for
+   free — no dark/light branching here. JS (see harith-shell.js) only ever
+   toggles classes and a rotation angle; every color decision lives here.
+
+   Opt-in by capability, not by device sniffing: a fine, hoverable pointer is
+   what a mouse looks like, and is absent on touch. Decorative motion drops
+   under reduced-motion, same as everywhere else in the system. */
+html.harith-cursor-active {
+  cursor: none;
+}
+html.harith-cursor-active a,
+html.harith-cursor-active button,
+html.harith-cursor-active [role='button'],
+html.harith-cursor-active summary {
+  cursor: none;
+}
+/* Text entry keeps its own caret — the heading arrow has nothing to say here.
+   Scoped to actual text-like input types: a checkbox, radio, range, file,
+   color, or submit/button input is a control, not a text field, and select
+   is a dropdown — all of those keep the heading arrow, same as any other
+   button or link above. */
+html.harith-cursor-active input[type='text'],
+html.harith-cursor-active input[type='email'],
+html.harith-cursor-active input[type='password'],
+html.harith-cursor-active input[type='search'],
+html.harith-cursor-active input[type='tel'],
+html.harith-cursor-active input[type='url'],
+html.harith-cursor-active input[type='number'],
+html.harith-cursor-active input:not([type]),
+html.harith-cursor-active textarea,
+html.harith-cursor-active [contenteditable='true'],
+html.harith-cursor-active [contenteditable=''] {
+  cursor: text;
+}
+
+/* A real pointer's hotspot is its tip — clicking happens where the tip is —
+   but the glyph spins around its own CENTER as it turns, like a compass
+   needle on a pin through its middle, not around the tip itself. The box is
+   centered on the pointer as always (transform-origin stays the element's
+   default 50% 50%); harith-shell.js does the work of shifting that center
+   opposite the glyph's current rotation so the tip still lands exactly on
+   the pointer once the rotation is applied. */
+.harith-cursor {
+  position: fixed; top: 0; left: 0; z-index: var(--z-cursor);
+  width: 78px; height: 78px; margin: -39px 0 0 -39px;
+  pointer-events: none; opacity: 0;
+  transition: opacity var(--duration-fast) var(--easing);
+}
+.harith-cursor.is-visible { opacity: 1; }
+.harith-cursor.is-hidden-over-text { opacity: 0; }
+
+/* No transition here: harith-shell.js interpolates the rotation itself,
+   frame by frame, and derives the box's compensating translate from that
+   SAME per-frame angle so the tip stays glued to the pointer throughout a
+   turn. A CSS transition on top of that would fight the per-frame writes —
+   and was exactly the bug: rotation eased on its own timeline while the
+   translate snapped straight to the angle it was still easing toward,
+   pulling the tip off the pointer for the length of every transition. */
+.harith-cursor__heading {
+  width: 100%; height: 100%;
+}
+.harith-cursor__heading svg { display: block; width: 100%; height: 100%; }
+
+/* The mark itself: the HK mark's own accent — deep slate-teal in light
+   mode, its pale inverse in dark mode — with a halo of --surface-strong for
+   contrast against whatever it's flying over. Same --accent every other
+   accented surface uses, not a color invented for this. */
+.harith-cursor__heading path {
+  fill: var(--accent);
+  stroke: var(--surface-strong);
+  stroke-width: 1.5px;
+  stroke-linejoin: round;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .harith-cursor { display: none; }
+}
